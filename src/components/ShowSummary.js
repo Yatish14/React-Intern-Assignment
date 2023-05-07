@@ -1,31 +1,69 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import { Link, useParams } from "react-router-dom";
+import "./ShowSummary.css"
 
 export const ShowSummary = (props) => {
+  const { showId } = useParams();
+  const api = `https://api.tvmaze.com/shows/${showId}`;
+  console.log(api);
+  const [data, setData] = useState();
+  const [visibility,setVisibility] = useState(false);
+  const bookTicket = (e) => {
+    setVisibility(true);
+  }
+  const username = sessionStorage.getItem("username");
+  const email = sessionStorage.getItem("email");
+  const phone = sessionStorage.getItem("phone");
 
-    console.log(props.data);
-  return (
-    <div>
-        <Card style={{ width: '300px', margin: 20}}>
-            <Card.Img className='img' variant="top" src ={props.data.image} alt = {props.data.name}/>
-            <Card.Body >
-                <Card.Title>{props.data.name}</Card.Title>
-                <Card.Text>
-                  <b>Imbd Rating</b> : {props.data.rating}
-                  <br></br>
-                  <b>Language</b> : {props.data.language}
-                  <br></br>
-                  <b>Premiered on</b> : {props.data.premiered}
-                  <br></br>
-                  <b>Summary</b> : {props.data.summary}
-                </Card.Text>
-                <Link to = "/React-Intern-Assignment/booking"><Button variant="primary">Book Now!</Button></Link>
-            </Card.Body>
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`${api}`);
+      const data = await res.json();
+      console.log(data);
+      setData(data);
+    };
+    fetchData();
+  }, []);
+
+  return (<>
+      {data && (    <div className="showSummary">
+        <Card style={{ width: "300px", margin: 20 }}>
+          <Card.Img
+            className="img"
+            variant="top"
+            src={data.image.original}
+            alt={data.name}
+          />
+          <Card.Body>
+            <Card.Title>{data.name}</Card.Title>
+            <Card.Text>
+              <b>Imbd Rating</b> : {data.rating.average}
+              <br></br>
+              <b>Language</b> : {data.language}
+              <br></br>
+              <b>Premiered on</b> : {data.premiered}
+              <br></br>
+              <b>Summary</b> : {data.summary}
+            </Card.Text>
+              <Button variant="primary" onClick={bookTicket}>Book Now!</Button>
+          </Card.Body>
         </Card>
-    </div>
-  )
-}
+        {visibility && (<div className="details">
+        Movie Name  : <input value={data.name}></input>
+        <br></br>
+        Name : <input placeholder="Name..." value = {username}></input>
+        <br></br>
+        Email : <input placeholder="Email..." value = {email}></input>
+        <br></br>
+        Phone : <input placeholder="Phone..." value = {phone}></input>
+        </div>
+)}
+        </div>
+        )}
+        </>
+  );
+};
 
-export default ShowSummary
+export default ShowSummary;
