@@ -9,7 +9,7 @@ export const ShowSummary = (props) => {
   return (
     <div>
         <Card style={{ width: '300px', margin: 20}}>
-            <Card.Img className='img' variant="left" src ={props.data.image} alt = {props.data.name}/>
+            <Card.Img className='img' variant="top" src ={props.data.image} alt = {props.data.name}/>
             <Card.Body >
                 <Card.Title>{props.data.name}</Card.Title>
                 <Card.Text>
