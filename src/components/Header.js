@@ -11,7 +11,7 @@ const Header = () => {
       <Navbar bg = "dark" variant = "dark" style={{height: 60,marginBottom: 10}}>
         <Container>
             <Navbar.Brand>
-            <Link to = "/" style={{fontSize: 30}}>Book your Show</Link>
+            <Link to = "/React-Intern-Assignment" style={{fontSize: 30}}>Book your Show</Link>
             </Navbar.Brand>
             <Navbar.Text className="searchbar">
                 <Form.Control 
