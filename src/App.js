@@ -10,8 +10,8 @@ function App() {
     <div className="App">
         <Header />
           <Routes>
-            <Route path ="/" element = {<Home />} />
-            <Route path = "/summary" element = {<ShowSummary />} />
+            <Route path ="/React-Intern-Assignment" element = {<Home />} />
+            <Route path = "/React-Intern-Assignment/summary" element = {<ShowSummary />} />
           </Routes>
       </div>
     </Router>

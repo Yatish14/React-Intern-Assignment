@@ -21,7 +21,7 @@ export const ShowSummary = (props) => {
                   <br></br>
                   <b>Summary</b> : {props.data.summary}
                 </Card.Text>
-                <Link to = "/summary"><Button variant="primary">Book Now!</Button></Link>
+                <Link to = "/React-Intern-Assignment/booking"><Button variant="primary">Book Now!</Button></Link>
             </Card.Body>
         </Card>
     </div>
