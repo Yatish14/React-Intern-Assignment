@@ -1,0 +1,7 @@
+@media (max-width: 771px)
+{
+    .searchbar
+    {
+        display: none !important;
+    }
+}

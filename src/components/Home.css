@@ -1,0 +1,12 @@
+.showsList
+{
+    display: flex;
+}
+.homeshow
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: 100%;
+}
