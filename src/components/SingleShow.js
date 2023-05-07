@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ShowSummary from './ShowSummary';
 // import './SingleShow.css'
-import { Link} from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
+// import { Link} from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
 
@@ -15,7 +15,7 @@ const SingleShow = ({val},i) => {
 
   function handleGetDetailsClick() {
     setShowDetailsVisible(true);
-    history.push('/summary', { data: val});
+    // history.push('/summary', { data: val});
     // console.log();
   }
 
@@ -33,7 +33,7 @@ const SingleShow = ({val},i) => {
                 {/* <Link to = "/summary"><Button variant="primary" onClick = {handleGetDetailsClick}>Get Details!</Button></Link> */}
                 {/* <button onClick={handleGetDetailsClick}>Get Details</button>
                 {showDetailsVisible && (
-                <ShowSummary data={val} onClose={() => setShowDetailsVisible(false)} />)} */}
+                <ShowSummary data={val} onClose={() => setShowDetailsVisible(false)} />)} */}
                 {/* <Link to={{
             pathname: "/summary",
             state: { data: val }
