@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ShowSummary.css"
 
 export const ShowSummary = (props) => {
@@ -33,7 +33,7 @@ export const ShowSummary = (props) => {
           <Card.Img
             className="img"
             variant="top"
-            src={data.image.original}
+            src={ data.image ? data.image.original : ""}
             alt={data.name}
           />
           <Card.Body>

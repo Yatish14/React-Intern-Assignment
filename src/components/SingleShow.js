@@ -28,6 +28,7 @@ const SingleShow = ({ val }, i) => {
           className="img"
           variant="top"
           src={val.image}
+          // src = "allstars.jpeg"
           alt={val.name}
           style={{ height: 300, width: 300, objectfit: "contain" }}
         />

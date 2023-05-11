@@ -25,13 +25,15 @@ const Home = () => {
           summary,
           premiered,
           language,
-          image: image?.original || null,
+          image: image?.original || 0,
         };
       });
       setData(listofShows);
     };
     fetchData();
   }, []);
+
+  console.log(data);
 
   return (
     <div className="showsList">
