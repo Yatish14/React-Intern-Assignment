@@ -3,7 +3,27 @@
     display: flex;
     margin: 5rem;
 }
-.details
+/* .details
 {
     margin : 0px 5rem 0 5rem;
+} */
+.summaryImage
+{
+    width: 300px;
+    height: 300px;
 }
+.summaryDetails
+{
+    margin-left: inherit;
+    width: 50%;
+}
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0 0 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }

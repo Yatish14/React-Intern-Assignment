@@ -16,7 +16,6 @@ const SingleShow = ({ val }, i) => {
 
   function handleGetDetailsClick(movie) {
     setShowDetailsVisible(true);
-    // history.push('/summary', { data: val});
     console.log(movie);
     navigate("/React-Intern-Assignment/summary/" + movie.id);
   }
@@ -28,9 +27,9 @@ const SingleShow = ({ val }, i) => {
           className="img"
           variant="top"
           src={val.image}
-          // src = "allstars.jpeg"
           alt={val.name}
-          style={{ height: 300, width: 300, objectfit: "contain" }}
+          style={{ height: 300, width: 300, objectfit: "contain", cursor: "pointer" }}
+          onClick={() => handleGetDetailsClick(val)}
         />
         <Card.Body style={{ width: 300 }}>
           <Card.Title>{val.name}</Card.Title>
@@ -39,18 +38,6 @@ const SingleShow = ({ val }, i) => {
             <br></br>
             Language : {val.language}
           </Card.Text>
-          {/* <Link to = "/summary"><Button variant="primary" onClick = {handleGetDetailsClick}>Get Details!</Button></Link> */}
-          {/* <button onClick={handleGetDetailsClick}>Get Details</button>
-                {showDetailsVisible && (
-                <ShowSummary data={val} onClose={() => setShowDetailsVisible(false)} />)} */}
-          {/* <Link to={{
-            pathname: "/summary",
-            state: { data: val }
-          }}>
-            <Button variant="primary" onClick={handleGetDetailsClick}>
-              Get Details
-            </Button>
-          </Link> */}
           <Button variant="primary" onClick={() => handleGetDetailsClick(val)}>
             Get Details
           </Button>
